@@ -45,7 +45,7 @@ chmod 600 "$WPE_SSHG_KEY_PRIVATE_PATH"
 chmod 644 "$WPE_SSHG_KEY_PUBLIC_PATH"
 
 # Deploy via SSH
-rsync -aHAXxv --numeric-ids --progress -e "ssh -v -p 22 -i ${WPE_SSHG_KEY_PRIVATE_PATH} -T -c arcfour -o Compression=no -o strictHostKeyChecking=no -x" --exclude=".*" $SRC_PATH "$WPE_DESTINATION"
+rsync -aHAXxv --numeric-ids --progress -e "ssh -v -p 22 -i ${WPE_SSHG_KEY_PRIVATE_PATH} -T -o Compression=no -o strictHostKeyChecking=no -x" --exclude=".*" $SRC_PATH "$WPE_DESTINATION"
 
 
 # Clear cache
